@@ -38,10 +38,10 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonRestore = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.pictureHelp = new System.Windows.Forms.PictureBox();
             this.pictureAbout = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).BeginInit();
+            this.pictureHelp = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAbout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewServer
@@ -87,7 +87,7 @@
             // 
             this.buttonAdd.Location = new System.Drawing.Point(12, 180);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(78, 32);
+            this.buttonAdd.Size = new System.Drawing.Size(78, 38);
             this.buttonAdd.TabIndex = 5;
             this.buttonAdd.Text = "ADD";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             // 
             this.buttonEdit.Location = new System.Drawing.Point(96, 180);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(78, 32);
+            this.buttonEdit.Size = new System.Drawing.Size(78, 38);
             this.buttonEdit.TabIndex = 6;
             this.buttonEdit.Text = "EDIT";
             this.buttonEdit.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // 
             this.buttonDelete.Location = new System.Drawing.Point(180, 180);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(78, 32);
+            this.buttonDelete.Size = new System.Drawing.Size(78, 38);
             this.buttonDelete.TabIndex = 7;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@
             // 
             this.buttonRestore.Location = new System.Drawing.Point(264, 180);
             this.buttonRestore.Name = "buttonRestore";
-            this.buttonRestore.Size = new System.Drawing.Size(78, 32);
+            this.buttonRestore.Size = new System.Drawing.Size(78, 38);
             this.buttonRestore.TabIndex = 8;
             this.buttonRestore.Text = "RESTORE";
             this.buttonRestore.UseVisualStyleBackColor = true;
@@ -123,20 +123,10 @@
             // 
             this.buttonSave.Location = new System.Drawing.Point(348, 180);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(138, 32);
+            this.buttonSave.Size = new System.Drawing.Size(138, 38);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "SAVE SETTINGS";
             this.buttonSave.UseVisualStyleBackColor = true;
-            // 
-            // pictureHelp
-            // 
-            this.pictureHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureHelp.Image = global::Jasarsoft.Multiplayer.Properties.Resources.question;
-            this.pictureHelp.Location = new System.Drawing.Point(465, 18);
-            this.pictureHelp.Name = "pictureHelp";
-            this.pictureHelp.Size = new System.Drawing.Size(21, 21);
-            this.pictureHelp.TabIndex = 10;
-            this.pictureHelp.TabStop = false;
             // 
             // pictureAbout
             // 
@@ -148,11 +138,21 @@
             this.pictureAbout.TabIndex = 11;
             this.pictureAbout.TabStop = false;
             // 
+            // pictureHelp
+            // 
+            this.pictureHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureHelp.Image = global::Jasarsoft.Multiplayer.Properties.Resources.question;
+            this.pictureHelp.Location = new System.Drawing.Point(465, 18);
+            this.pictureHelp.Name = "pictureHelp";
+            this.pictureHelp.Size = new System.Drawing.Size(21, 21);
+            this.pictureHelp.TabIndex = 10;
+            this.pictureHelp.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 224);
+            this.ClientSize = new System.Drawing.Size(498, 230);
             this.Controls.Add(this.pictureAbout);
             this.Controls.Add(this.pictureHelp);
             this.Controls.Add(this.buttonSave);
@@ -166,8 +166,8 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "PES6 Tools: Multiplayer";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAbout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).EndInit();
             this.ResumeLayout(false);
 
         }
