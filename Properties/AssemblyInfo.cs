@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PES6 Tools: Multiplayer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("PES6 Tools: Multiplayer Settings")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Edin Jašarević - Jasarsoft")]
 [assembly: AssemblyProduct("kithost")]

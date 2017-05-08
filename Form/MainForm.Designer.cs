@@ -38,10 +38,10 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonRestore = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.pictureAbout = new System.Windows.Forms.PictureBox();
             this.pictureHelp = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAbout)).BeginInit();
+            this.pictureAbout = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAbout)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewServer
@@ -128,31 +128,33 @@
             this.buttonSave.Text = "SAVE SETTINGS";
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
-            // pictureAbout
-            // 
-            this.pictureAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureAbout.Location = new System.Drawing.Point(465, 18);
-            this.pictureAbout.Name = "pictureAbout";
-            this.pictureAbout.Size = new System.Drawing.Size(21, 21);
-            this.pictureAbout.TabIndex = 10;
-            this.pictureAbout.TabStop = false;
-            // 
             // pictureHelp
             // 
             this.pictureHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureHelp.Location = new System.Drawing.Point(438, 18);
+            this.pictureHelp.Image = global::Jasarsoft.Multiplayer.Properties.Resources.question;
+            this.pictureHelp.Location = new System.Drawing.Point(465, 18);
             this.pictureHelp.Name = "pictureHelp";
             this.pictureHelp.Size = new System.Drawing.Size(21, 21);
-            this.pictureHelp.TabIndex = 11;
+            this.pictureHelp.TabIndex = 10;
             this.pictureHelp.TabStop = false;
+            // 
+            // pictureAbout
+            // 
+            this.pictureAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureAbout.Image = global::Jasarsoft.Multiplayer.Properties.Resources.information;
+            this.pictureAbout.Location = new System.Drawing.Point(438, 18);
+            this.pictureAbout.Name = "pictureAbout";
+            this.pictureAbout.Size = new System.Drawing.Size(21, 21);
+            this.pictureAbout.TabIndex = 11;
+            this.pictureAbout.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 224);
-            this.Controls.Add(this.pictureHelp);
             this.Controls.Add(this.pictureAbout);
+            this.Controls.Add(this.pictureHelp);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonRestore);
             this.Controls.Add(this.buttonDelete);
@@ -164,8 +166,8 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "PES6 Tools: Multiplayer";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAbout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,8 +184,8 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonRestore;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.PictureBox pictureAbout;
         private System.Windows.Forms.PictureBox pictureHelp;
+        private System.Windows.Forms.PictureBox pictureAbout;
 
     }
 }
