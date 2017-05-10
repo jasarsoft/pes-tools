@@ -13,12 +13,12 @@ namespace Jasarsoft.Multiplayer
             this.footer = "### PES6 Tools: Multiplayer - Footer";
         }
 
-        public readonly string Header
+        public string Header
         {
             get { return this.header; }
         }
 
-        public readonly string Footer
+        public string Footer
         {
             get { return this.footer; }
         }
