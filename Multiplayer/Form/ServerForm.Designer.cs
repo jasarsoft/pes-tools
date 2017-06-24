@@ -35,7 +35,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelComment = new System.Windows.Forms.Label();
             this.buttonServer = new System.Windows.Forms.Button();
-            this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxAddress
@@ -91,32 +91,35 @@
             // 
             // buttonServer
             // 
-            this.buttonServer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonServer.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonServer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonServer.Location = new System.Drawing.Point(128, 115);
             this.buttonServer.Name = "buttonServer";
             this.buttonServer.Size = new System.Drawing.Size(220, 38);
             this.buttonServer.TabIndex = 8;
-            this.buttonServer.Text = "SERVER";
+            this.buttonServer.Text = "SAVE SERVER";
             this.buttonServer.UseVisualStyleBackColor = true;
+            this.buttonServer.Click += new System.EventHandler(this.buttonServer_Click);
             // 
-            // buttonReset
+            // buttonCancel
             // 
-            this.buttonReset.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonReset.Location = new System.Drawing.Point(15, 115);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(107, 38);
-            this.buttonReset.TabIndex = 7;
-            this.buttonReset.Text = "RESET";
-            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Location = new System.Drawing.Point(15, 115);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(107, 38);
+            this.buttonCancel.TabIndex = 7;
+            this.buttonCancel.Text = "CANCEL";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // ServerForm
             // 
             this.AcceptButton = this.buttonServer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonReset;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(360, 165);
-            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonServer);
             this.Controls.Add(this.labelComment);
             this.Controls.Add(this.labelName);
@@ -125,14 +128,17 @@
             this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.textBoxAddress);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ServerForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PES6 Tools: ";
+            this.Text = "PES6 Tools: Multiplayer";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.ServerForm_Load);
+            this.Shown += new System.EventHandler(this.ServerForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +153,6 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelComment;
         private System.Windows.Forms.Button buttonServer;
-        private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

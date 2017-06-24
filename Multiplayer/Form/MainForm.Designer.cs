@@ -58,6 +58,7 @@
             this.listViewServer.TabIndex = 4;
             this.listViewServer.UseCompatibleStateImageBehavior = false;
             this.listViewServer.View = System.Windows.Forms.View.Details;
+            this.listViewServer.SelectedIndexChanged += new System.EventHandler(this.listViewServer_SelectedIndexChanged);
             // 
             // columnAddress
             // 
@@ -91,6 +92,7 @@
             this.buttonAdd.TabIndex = 5;
             this.buttonAdd.Text = "ADD";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
@@ -100,6 +102,7 @@
             this.buttonEdit.TabIndex = 6;
             this.buttonEdit.Text = "EDIT";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -109,6 +112,7 @@
             this.buttonDelete.TabIndex = 7;
             this.buttonDelete.Text = "DELETE";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonRestore
             // 
@@ -118,9 +122,11 @@
             this.buttonRestore.TabIndex = 8;
             this.buttonRestore.Text = "RESTORE";
             this.buttonRestore.UseVisualStyleBackColor = true;
+            this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
             // 
             // buttonSave
             // 
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSave.Location = new System.Drawing.Point(348, 180);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(138, 38);
@@ -163,9 +169,11 @@
             this.Controls.Add(this.listViewServer);
             this.Controls.Add(this.labelHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "PES6 Tools: Multiplayer";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureAbout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHelp)).EndInit();
             this.ResumeLayout(false);
