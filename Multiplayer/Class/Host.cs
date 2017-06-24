@@ -33,31 +33,29 @@ namespace Jasarsoft.Multiplayer
 
         public bool Valid()
         {
-            if (File.Exists(this.path))
+            if (!File.Exists(this.path)) return false;
+
+            string line;
+            Content content = new Content();
+
+            using (StreamReader sr = new StreamReader(this.path))
             {
-                string line;
-                Content content = new Content();
-
-                using (StreamReader sr = new StreamReader(this.path))
+                do
                 {
-                    do
+                    try { line = sr.ReadLine(); }
+                    catch (Exception) { return false; }
+                    if (line.StartsWith(content.Header) && line.Length == content.Header.Length)
                     {
-                        line = sr.ReadLine();
-                        if (line.StartsWith(content.Header) && line.Length == content.Header.Length)
+                        do
                         {
-                            do
-                            {
-                                line = sr.ReadLine();
-                                if (line.StartsWith(content.Footer) && line.Length == content.Footer.Length)
-                                {
-                                    return true;
-                                }
-                            } while (sr.EndOfStream);
-                        }
-                    } while (sr.EndOfStream);
-                }
+                            try { line = sr.ReadLine(); }
+                            catch (Exception) { return false; }
+                            if (line.StartsWith(content.Footer) && line.Length == content.Footer.Length) return true;
+                        } while (sr.EndOfStream);
+                    }
+                } while (sr.EndOfStream);
             }
-
+            
             return false;
         }
 

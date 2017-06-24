@@ -1,7 +1,7 @@
 ﻿
 namespace Jasarsoft.Multiplayer
 {
-    private class Title
+    internal class Title
     {
         private readonly string titleInfo;
         private readonly string titleError;

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\About.cs" />
     <Compile Include="Class\Content.cs" />
     <Compile Include="Form\MainForm.cs">
       <SubType>Form</SubType>
@@ -49,6 +50,7 @@
     </Compile>
     <Compile Include="Class\Multiplayer.cs" />
     <Compile Include="Class\Host.cs" />
+    <Compile Include="Class\Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\ServerForm.cs">
       <SubType>Form</SubType>
@@ -56,6 +58,9 @@
     <Compile Include="Form\ServerForm.Designer.cs">
       <DependentUpon>ServerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\Title.cs" />
+    <Compile Include="Class\Server.cs" />
+    <Compile Include="Class\ServerDefault.cs" />
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

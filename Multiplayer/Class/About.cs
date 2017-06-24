@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Jasarsoft.Multiplayer
 {
-    private class About
+    internal class About
     {
         public string Name
         {
