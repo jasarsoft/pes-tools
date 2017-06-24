@@ -1,0 +1,5 @@
+*.svn-base
+.svn/entries
+.svn/wc.db-journal
+.svn/format
+.svn/wc.db
