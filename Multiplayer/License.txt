@@ -1,4 +1,4 @@
-Copyright 2016 Kitserver 6 Settings of copyright Edin Jašareviæ
+Copyright 2017 PES6 Tools: Multiplayer of copyright Edin Jašareviæ
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
