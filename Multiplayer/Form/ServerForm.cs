@@ -21,7 +21,7 @@ namespace Jasarsoft.Multiplayer
         }
 
 
-        public bool IsSaved
+        public bool Saved
         {
             get { return this.saved; }
         }

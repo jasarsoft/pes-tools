@@ -81,9 +81,9 @@ namespace Jasarsoft.Multiplayer
                 ListViewItem item = new ListViewItem();
 
                 item.Checked = true;
-                item.Text = sf.TextAddress;
-                item.SubItems.Add(sf.TextName);
-                item.SubItems.Add(sf.TextComment);
+                item.Text = Server.Address;
+                item.SubItems.Add(Server.Name);
+                item.SubItems.Add(Server.Comment);
                 this.listViewServer.Items.Add(item);
                 this.buttonRestore.Enabled = true;
             }
@@ -102,16 +102,16 @@ namespace Jasarsoft.Multiplayer
             ServerForm sf = new ServerForm();
             int index = this.listViewServer.Items.IndexOf(this.listViewServer.SelectedItems[0]);
             
-            sf.TextAddress = this.listViewServer.Items[index].Text;
-            sf.TextName = this.listViewServer.Items[index].SubItems[1].Text;
-            sf.TextComment = this.listViewServer.Items[index].SubItems[2].Text;
+            Server.Address = this.listViewServer.Items[index].Text;
+            Server.Name = this.listViewServer.Items[index].SubItems[1].Text;
+            Server.Comment = this.listViewServer.Items[index].SubItems[2].Text;
 
             sf.ShowDialog(this);
             if (sf.Saved)
             {
-                this.listViewServer.Items[index].Text = sf.TextAddress;
-                this.listViewServer.Items[index].SubItems[1].Text = sf.TextName;
-                this.listViewServer.Items[index].SubItems[2].Text = sf.TextComment;
+                this.listViewServer.Items[index].Text = Server.Address;
+                this.listViewServer.Items[index].SubItems[1].Text = Server.Name;
+                this.listViewServer.Items[index].SubItems[2].Text = Server.Comment;
             }
 
             this.buttonRestore.Enabled = true;
