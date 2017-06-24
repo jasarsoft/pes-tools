@@ -7,14 +7,7 @@ namespace Jasarsoft.Multiplayer
         private static string address;
         private static string comment;
 
-        public Server()
-        {
-            name = null;
-            address = null;
-            comment = null;
-        }
-
-
+        
         public static string Name
         {
             get { return name; }
