@@ -51,7 +51,9 @@
             this.columnAddress,
             this.columnName,
             this.columnComment});
+            this.listViewServer.FullRowSelect = true;
             this.listViewServer.Location = new System.Drawing.Point(12, 42);
+            this.listViewServer.MultiSelect = false;
             this.listViewServer.Name = "listViewServer";
             this.listViewServer.ShowGroups = false;
             this.listViewServer.Size = new System.Drawing.Size(474, 132);
