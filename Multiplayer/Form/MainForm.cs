@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Jasarsoft.Multiplayer
+namespace Jasarsoft.PES6Tools.Multiplayer
 {
     public partial class MainForm : Form
     {
@@ -42,6 +42,10 @@ namespace Jasarsoft.Multiplayer
                         item.Checked = false;
                         temp = temp.Remove(0, 1);
                     }
+                    else
+                    {
+                        item.Checked = true;
+                    }
                     RemoveWhitespace(ref temp);
                     //address
                     item.Text = temp.Remove(temp.IndexOf(" "));
@@ -68,7 +72,7 @@ namespace Jasarsoft.Multiplayer
                     line = line.Remove(0, 1);
                 else
                     done = true;
-            } while (done);
+            } while (!done);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -153,6 +157,39 @@ namespace Jasarsoft.Multiplayer
         private void buttonRestore_Click(object sender, EventArgs e)
         {
             this.MainForm_Load(sender, e);
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            string name;
+            string address;
+            string comment;
+
+            this.host.Server.Clear();
+            for(int i = 0; i < this.listViewServer.Items.Count; i++)
+            {
+                address = this.listViewServer.Items[i].Text;
+                name = this.listViewServer.Items[i].SubItems[1].Text;
+                comment = this.listViewServer.Items[i].SubItems[2].Text;
+
+                if (this.listViewServer.Items[i].Checked)
+                    this.host.Server.Add(address + " " + name + " #" + comment);
+                else
+                    this.host.Server.Add("#" + address + " " + name + " #" + comment);
+            }
+
+            string text;
+            Title caption = new Title();
+            if (this.host.Write())
+            {
+                text = "Host settings have been successfully saved.";
+                MessageBox.Show(text, caption.Info, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                text = "Host settings are not successfully saved.";
+                MessageBox.Show(text, caption.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }
