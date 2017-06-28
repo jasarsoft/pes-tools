@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PES6 Tools: Multiplayer")]
 [assembly: AssemblyDescription("PES6 Tools: Multiplayer Settings")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Edin Jašarević - Jasarsoft")]
+[assembly: AssemblyCompany("Jasarsoft")]
 [assembly: AssemblyProduct("kithost")]
-[assembly: AssemblyCopyright("Copyright ©  2017 Edin Jašarević")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Jasarsoft")]
 [assembly: AssemblyTrademark("Jasarsoft")]
 [assembly: AssemblyCulture("")]
 
