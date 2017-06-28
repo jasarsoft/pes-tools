@@ -64,6 +64,9 @@
   <PropertyGroup>
     <StartupObject>Jasarsoft.PES6Tools.Multiplayer.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>settings-18-512.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -140,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="settings-18-512.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
