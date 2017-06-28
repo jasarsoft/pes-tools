@@ -28,46 +28,49 @@ namespace Jasarsoft.Multiplayer
 
         public bool Check()
         {
-            return File.Exists(this.path);
+            return !String.IsNullOrEmpty(this.path) && File.Exists(this.path);
         }
 
         public bool Valid()
         {
-            if (!File.Exists(this.path)) return false;
-
             string line;
             Content content = new Content();
 
-            using (StreamReader sr = new StreamReader(this.path))
+            try
             {
-                do
+                using (StreamReader sr = new StreamReader(this.path))
                 {
-                    try { line = sr.ReadLine(); }
-                    catch (Exception) { return false; }
-                    if (line.StartsWith(content.Header) && line.Length == content.Header.Length)
+                    do
                     {
-                        do
+                        line = sr.ReadLine();
+                        if (line.StartsWith(content.Header) && line.Length == content.Header.Length)
                         {
-                            try { line = sr.ReadLine(); }
-                            catch (Exception) { return false; }
-                            if (line.StartsWith(content.Footer) && line.Length == content.Footer.Length) return true;
-                        } while (sr.EndOfStream);
-                    }
-                } while (sr.EndOfStream);
+                            do
+                            {
+                                line = sr.ReadLine();
+                                if (line.StartsWith(content.Footer) && line.Length == content.Footer.Length) return true;
+                            } while (sr.EndOfStream);
+                        }
+                    } while (sr.EndOfStream);
+                }
             }
-            
+            catch (Exception)
+            {
+                //return false;
+            }
+                        
             return false;
         }
 
         public bool Read()
         {
-            if (File.Exists(this.path))
-            {
-                string line;
-                this.server.Clear();
-                Content content = new Content();
+            string line;
+            this.server.Clear();
+            Content content = new Content();
 
-                using(StreamReader sr = new StreamReader(this.path))
+            try
+            {
+                using (StreamReader sr = new StreamReader(this.path))
                 {
                     do
                     {
@@ -86,7 +89,11 @@ namespace Jasarsoft.Multiplayer
                     } while (sr.EndOfStream);
                 }
             }
-
+            catch (Exception)
+            {
+                //return false;
+            }
+            
             return false;
         }
 
@@ -97,7 +104,27 @@ namespace Jasarsoft.Multiplayer
             Content content = new Content();
             List<string> text = new List<string>();
 
-            if (File.Exists(this.path))
+            if(!File.Exists(this.path))
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(this.path))
+                    {
+                        sw.WriteLine(content.Header);
+                        foreach (string name in this.server) sw.WriteLine(name);
+                        sw.WriteLine(content.Footer);
+                        done = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    done = false;
+                }
+
+                return done;
+            }
+
+            try
             {
                 using (StreamReader sr = new StreamReader(this.path))
                 {
@@ -137,18 +164,48 @@ namespace Jasarsoft.Multiplayer
                     }
                 }
             }
-            else
+            catch (Exception)
             {
-                using (StreamWriter sw = new StreamWriter(this.path))
-                {
-                    sw.WriteLine(content.Header);
-                    foreach (string name in this.server) sw.WriteLine(name);
-                    sw.WriteLine(content.Footer);
-                    done = true;
-                }
+                done = false;
             }
 
             return done;
+        }
+
+
+        private List<string> ReadServer(string path, string header, string footer)
+        {
+            string line;
+            bool finish = false;
+            List<string> servers = new List<string>();
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    do
+                    {
+                        line = sr.ReadLine();
+                        if (line.StartsWith(header) && line.Length == header.Length)
+                        {
+                            do
+                            {
+                                line = sr.ReadLine();
+                                if (line.StartsWith(footer) && line.Length == footer.Length)
+                                    finish = true;
+                                else
+                                    servers.Add(line);
+                            } while (sr.EndOfStream || finish);
+                        }
+                    } while (sr.EndOfStream || finish);
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+            return servers;
         }
     }
 }
