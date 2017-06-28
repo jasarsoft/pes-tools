@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jasarsoft.Multiplayer.Properties {
+namespace Jasarsoft.PES6Tools.Multiplayer.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Jasarsoft.Multiplayer.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Jasarsoft.Multiplayer.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Jasarsoft.PES6Tools.Multiplayer.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

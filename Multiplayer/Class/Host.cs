@@ -2,7 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 
-namespace Jasarsoft.Multiplayer
+namespace Jasarsoft.PES6Tools.Multiplayer
 {
     internal class Host
     {

@@ -1,4 +1,4 @@
-﻿namespace Jasarsoft.Multiplayer
+﻿namespace Jasarsoft.PES6Tools.Multiplayer
 {
     partial class MainForm
     {
@@ -135,11 +135,12 @@
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "SAVE SETTINGS";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // pictureAbout
             // 
             this.pictureAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureAbout.Image = global::Jasarsoft.Multiplayer.Properties.Resources.information;
+            this.pictureAbout.Image = global::Jasarsoft.PES6Tools.Multiplayer.Properties.Resources.information;
             this.pictureAbout.Location = new System.Drawing.Point(438, 18);
             this.pictureAbout.Name = "pictureAbout";
             this.pictureAbout.Size = new System.Drawing.Size(21, 21);
@@ -149,7 +150,7 @@
             // pictureHelp
             // 
             this.pictureHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureHelp.Image = global::Jasarsoft.Multiplayer.Properties.Resources.question;
+            this.pictureHelp.Image = global::Jasarsoft.PES6Tools.Multiplayer.Properties.Resources.question;
             this.pictureHelp.Location = new System.Drawing.Point(465, 18);
             this.pictureHelp.Name = "pictureHelp";
             this.pictureHelp.Size = new System.Drawing.Size(21, 21);

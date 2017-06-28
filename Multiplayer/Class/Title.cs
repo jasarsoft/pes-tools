@@ -1,5 +1,5 @@
 ﻿
-namespace Jasarsoft.Multiplayer
+namespace Jasarsoft.PES6Tools.Multiplayer
 {
     internal class Title
     {

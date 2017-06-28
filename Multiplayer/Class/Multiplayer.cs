@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Jasarsoft.Multiplayer
+namespace Jasarsoft.PES6Tools.Multiplayer
 {
     static class Program
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Jasarsoft.Multiplayer
+namespace Jasarsoft.PES6Tools.Multiplayer
 {
     internal class About
     {

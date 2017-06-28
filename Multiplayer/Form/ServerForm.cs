@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Jasarsoft.Multiplayer
+namespace Jasarsoft.PES6Tools.Multiplayer
 {
     public partial class ServerForm : Form
     {
