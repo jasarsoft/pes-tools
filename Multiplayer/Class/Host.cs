@@ -49,9 +49,9 @@ namespace Jasarsoft.Multiplayer
                             {
                                 line = sr.ReadLine();
                                 if (line.StartsWith(content.Footer) && line.Length == content.Footer.Length) return true;
-                            } while (sr.EndOfStream);
+                            } while (!sr.EndOfStream);
                         }
-                    } while (sr.EndOfStream);
+                    } while (!sr.EndOfStream);
                 }
             }
             catch (Exception)
@@ -84,9 +84,9 @@ namespace Jasarsoft.Multiplayer
                                     return true;
                                 else
                                     this.server.Add(line);
-                            } while (sr.EndOfStream);
+                            } while (!sr.EndOfStream);
                         }
-                    } while (sr.EndOfStream);
+                    } while (!sr.EndOfStream);
                 }
             }
             catch (Exception)
@@ -143,25 +143,25 @@ namespace Jasarsoft.Multiplayer
                                     text.Add(line);
                                     done = true;
                                 }
-                            } while (done || sr.EndOfStream);
+                            } while (!done || !sr.EndOfStream);
                         }
                         else text.Add(line);
-                    } while (sr.EndOfStream);
+                    } while (!sr.EndOfStream);
+                }
 
-                    if (!done)
-                    {
-                        text.Add("");
-                        text.Add(content.Header);
-                        foreach (string name in this.server) text.Add(name);
-                        text.Add(content.Footer);
-                        done = true;
-                    }
+                if (!done)
+                {
+                    text.Add("");
+                    text.Add(content.Header);
+                    foreach (string name in this.server) text.Add(name);
+                    text.Add(content.Footer);
+                    done = true;
+                }
 
-                    using (StreamWriter sw = new StreamWriter(this.path))
-                    {
-                        foreach (string name in text) sw.WriteLine(name);
-                        done = true;
-                    }
+                using (StreamWriter sw = new StreamWriter(this.path))
+                {
+                    foreach (string name in text) sw.WriteLine(name);
+                    done = true;
                 }
             }
             catch (Exception)
@@ -195,9 +195,9 @@ namespace Jasarsoft.Multiplayer
                                     finish = true;
                                 else
                                     servers.Add(line);
-                            } while (sr.EndOfStream || finish);
+                            } while (!sr.EndOfStream || !finish);
                         }
-                    } while (sr.EndOfStream || finish);
+                    } while (!sr.EndOfStream || !finish);
                 }
             }
             catch (Exception)
